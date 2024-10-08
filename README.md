@@ -20,8 +20,36 @@ This project is a machine learning application designed to predict customer chur
 
 ## Setup Instructions
 
-### 1. Clone the Repository
+## Running the Project Locally
 
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+Follow these steps to run the Churn Prediction project on your local machine.
+
+### Prerequisites
+
+Make sure you have the following installed:
+- **Git**: [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
+
+### Steps to Run the Project
+
+1. **Clone the GitHub Repository**:
+   First, clone the repository to your local machine using Git:
+
+   ```bash
+   git clone https://github.com/uvezero/churn_prediction.git
+   cd churn_prediction
+
+2. **Build the Docker Image:**
+   Once inside the project directory, build the Docker image using the provided `dockerfile`:
+
+    ```bash
+   docker build -t churn_prediction_app .
+    ```
+3. **Run the Docker Container:**
+
+  ```bash
+  docker run -p 5000:5000 -p 8765:8765 churn_prediction_app
+  ```
+4. **Open the solara interface in you browser:**
+     ```
+     http://localhost:8765
